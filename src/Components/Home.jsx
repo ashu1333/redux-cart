@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import currencyFormatter from "currency-formatter";
 const Home = () => {
@@ -14,12 +15,14 @@ const Home = () => {
             <div className="col-3" key={product.id}>
               <div className="product">
                 <div className="product__img">
-                  <img src={`/images/${product.image}`} />
+                  <Link to={`/details/${product.id}`}>
+                    <img src={`/images/${product.image}`} />
+                  </Link>
                 </div>
 
                 <div className="product__name">{product.name}</div>
 
-                <div className="row product__prices">
+                <div className="row ">
                   <div className="col-6">
                     <div className="product__price">
                       <span className="actualPrice">
