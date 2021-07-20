@@ -40,6 +40,57 @@ const cartReducer = (state = initialState, action) => {
         };
       }
 
+    case "INC":
+      findPro = state.products.find((product) => product.id === action.payload);
+      index = state.products.findIndex(
+        (product) => product.id === action.payload
+      );
+      findPro.quantity += 1;
+      state.products[index] = findPro;
+      const Tprice = state.totalPrice + findPro.discountPrice;
+      const Tquantities = state.totalQuantity + 1;
+      localStorage.setItem("Tprice", Tprice);
+      localStorage.setItem("Tquantity", Tquantities);
+      return {
+        ...state,
+        totalPrice: state.totalPrice + findPro.discountPrice,
+        totalQuantity: state.totalQuantity + 1,
+      };
+
+    case "DEC":
+      findPro = state.products.find((product) => product.id === action.payload);
+      index = state.products.findIndex(
+        (product) => product.id === action.payload
+      );
+      if (findPro.quantity > 1) {
+        findPro.quantity -= 1;
+        state.products[index] = findPro;
+        const Tprice = state.totalPrice - findPro.discountPrice;
+        const Tquantities = state.totalQuantity - 1;
+        localStorage.setItem("Tprice", Tprice);
+        localStorage.setItem("Tquantity", Tquantities);
+        return {
+          ...state,
+          totalPrice: state.totalPrice - findPro.discountPrice,
+          totalQuantity: state.totalQuantity - 1,
+        };
+      } else {
+        return state;
+      }
+
+    case "REMOVE":
+      findPro = state.products.find((product) => product.id === action.payload);
+      const filtered = state.products.filter(
+        (product) => product.id !== action.payload
+      );
+      localStorage.setItem("product", JSON.stringify(filtered));
+      return {
+        ...state,
+        products: filtered,
+        totalPrice: state.totalPrice - findPro.discountPrice * findPro.quantity,
+        totalQuantity: state.totalQuantity - findPro.quantity,
+      };
+
     default:
       return state;
   }

@@ -2,6 +2,7 @@ import currencyFormatter from "currency-formatter";
 import { useSelector, useDispatch } from "react-redux";
 import { BsDash, BsPlus } from "react-icons/bs";
 import { BsReverseBackspaceReverse } from "react-icons/bs";
+
 const Cart = () => {
   const dispatch = useDispatch();
   const { products, totalQuantity, totalPrice } = useSelector(
