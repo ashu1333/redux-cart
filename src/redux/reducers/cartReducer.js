@@ -84,6 +84,10 @@ const cartReducer = (state = initialState, action) => {
         (product) => product.id !== action.payload
       );
       localStorage.setItem("product", JSON.stringify(filtered));
+      const Tp = state.totalPrice - findPro.discountPrice * findPro.quantity;
+      const Tq = state.totalQuantitty - findPro.quantity;
+      localStorage.setItem("Tprice", Tp);
+      localStorage.setItem("Tquantity", Tq);
       return {
         ...state,
         products: filtered,
