@@ -11,7 +11,7 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="container">
-        <h3>Your cart</h3>
+        {products.length > 0 && <h3>Your cart</h3>}
         {products.length > 0 ? (
           <>
             <div className="row">
@@ -125,7 +125,7 @@ const Cart = () => {
             </div>
           </>
         ) : (
-          "YOUR CART IS EMPTY"
+          <h3>YOUR CART IS EMPTY</h3>
         )}
       </div>
     </div>

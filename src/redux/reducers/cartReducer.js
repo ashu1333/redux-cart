@@ -1,10 +1,12 @@
 const initialState = {
   totalPrice:
-    localStorage.getItem("Tprice") != null ? localStorage.getItem("Tprice") : 0,
+    localStorage.getItem("Tprice") != null
+      ? parseFloat(localStorage.getItem("Tprice"))
+      : 0,
 
   totalQuantity:
     localStorage.getItem("Tquantity") != null
-      ? localStorage.getItem("Tquantity")
+      ? parseInt(localStorage.getItem("Tquantity"))
       : 0,
 
   products:
@@ -80,14 +82,17 @@ const cartReducer = (state = initialState, action) => {
 
     case "REMOVE":
       findPro = state.products.find((product) => product.id === action.payload);
+
       const filtered = state.products.filter(
         (product) => product.id !== action.payload
       );
-      localStorage.setItem("product", JSON.stringify(filtered));
+
       const Tp = state.totalPrice - findPro.discountPrice * findPro.quantity;
-      const Tq = state.totalQuantitty - findPro.quantity;
+      const Tq = state.totalQuantity - findPro.quantity;
+
       localStorage.setItem("Tprice", Tp);
       localStorage.setItem("Tquantity", Tq);
+      localStorage.setItem("product", JSON.stringify(filtered));
       return {
         ...state,
         products: filtered,
