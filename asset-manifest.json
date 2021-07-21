@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/redux-cart/static/css/main.9ac8cf11.chunk.css",
+    "main.js": "/redux-cart/static/js/main.59cdcaf2.chunk.js",
+    "main.js.map": "/redux-cart/static/js/main.59cdcaf2.chunk.js.map",
+    "runtime-main.js": "/redux-cart/static/js/runtime-main.d374a7d1.js",
+    "runtime-main.js.map": "/redux-cart/static/js/runtime-main.d374a7d1.js.map",
+    "static/js/2.d6dcdfae.chunk.js": "/redux-cart/static/js/2.d6dcdfae.chunk.js",
+    "static/js/2.d6dcdfae.chunk.js.map": "/redux-cart/static/js/2.d6dcdfae.chunk.js.map",
+    "static/js/3.c864d122.chunk.js": "/redux-cart/static/js/3.c864d122.chunk.js",
+    "static/js/3.c864d122.chunk.js.map": "/redux-cart/static/js/3.c864d122.chunk.js.map",
+    "index.html": "/redux-cart/index.html",
+    "static/css/main.9ac8cf11.chunk.css.map": "/redux-cart/static/css/main.9ac8cf11.chunk.css.map",
+    "static/js/2.d6dcdfae.chunk.js.LICENSE.txt": "/redux-cart/static/js/2.d6dcdfae.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/redux-cart/static/media/img1.85a5537e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d374a7d1.js",
+    "static/js/2.d6dcdfae.chunk.js",
+    "static/css/main.9ac8cf11.chunk.css",
+    "static/js/main.59cdcaf2.chunk.js"
+  ]
+}
